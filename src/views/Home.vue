@@ -23,7 +23,7 @@ import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import service from "../request";
 
-const mealsList = computed(() => store.state.meals);
+// const mealsList = computed(() => store.state.meals);
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWYXZ";
 const meals = ref([]);
 

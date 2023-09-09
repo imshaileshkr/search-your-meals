@@ -14,7 +14,10 @@
         </router-link>
       </div>
     </div>
-    <p v-for="meal in meals" :key="meal" class="p-4">{{ meal }}</p>
+    <!-- <p v-for="meal in meals" :key="meal" class="p-4">
+      {{ meal }}
+    </p> -->
+    <!-- <pre>{{ meals }}</pre> -->
   </div>
 </template>
 

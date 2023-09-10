@@ -11,3 +11,9 @@ export function getMealsDetails({ commit }, mealId) {
     commit("setMealDetails", data.meals[0] ? data.meals[0] : {});
   });
 }
+
+export function fetchMealsByLetter({ commit }, letter) {
+  axiosClient.get(`search.php?f=${letter}`).then(({ data }) => {
+    commit("setMealsByLetter", data.meals);
+  });
+}

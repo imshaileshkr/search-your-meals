@@ -1,4 +1,6 @@
 export function setSearchedMeals(state, searchData) {
-  console.log(searchData);
   state.searchMealsData = searchData;
+}
+export function setMealDetails(state, details) {
+  state.mealDetails = details;
 }

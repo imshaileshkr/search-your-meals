@@ -5,3 +5,9 @@ export function searchMeals({ commit }, keyword) {
     commit("setSearchedMeals", data.meals);
   });
 }
+
+export function getMealsDetails({ commit }, mealId) {
+  axiosClient.get(`lookup.php?i=${mealId}`).then(({ data }) => {
+    commit("setMealDetails", data.meals[0] ? data.meals[0] : {});
+  });
+}

@@ -4,6 +4,7 @@ import SearchByName from "../views/SearchByName.vue";
 import SearchByLetter from "../views/SearchByLetter.vue";
 import SearchByIngredients from "../views/SearchByIngredients.vue";
 import defaultLayout from "../components/DefaultLayout.vue";
+import MealsDetails from "../views/MealsDetails.vue";
 const routes = [
   {
     path: "/",
@@ -28,6 +29,11 @@ const routes = [
         path: "/by-ingredients/:ingredients?",
         name: "byIngredients",
         component: SearchByIngredients,
+      },
+      {
+        path: "/meal/:id?",
+        name: "mealsDetails",
+        component: MealsDetails,
       },
     ],
   },

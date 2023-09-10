@@ -9,6 +9,7 @@
     />
     <div>
       <div
+        v-if="meals && !loading"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-16"
       >
         <div
@@ -43,6 +44,14 @@
           </div>
         </div>
       </div>
+      <div v-else class="flex justify-center mt-48">
+        <div v-if="loading">
+          <loader></loader>
+        </div>
+        <div v-else>
+          <h3 class="text-xl font-semibold">Data not found.</h3>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -52,9 +61,12 @@ import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import { useRoute } from "vue-router";
 import YouTubeButton from "../components/YouTubeButton.vue";
+import loader from "./Loader.vue";
 
 const keyword = ref("");
 const route = useRoute();
+const loading = ref(false);
+
 onMounted(() => {
   keyword.value = route.params.name;
   if (keyword.value) searchMeal();
@@ -62,7 +74,18 @@ onMounted(() => {
 
 const meals = computed(() => store.state.searchMealsData);
 function searchMeal() {
-  store.dispatch("searchMeals", keyword.value);
+  loading.value = true;
+
+  store
+    .dispatch("searchMeals", keyword.value)
+    .then(() => {
+      setTimeout(() => {
+        loading.value = false;
+      }, 400);
+    })
+    .catch(() => {
+      loading.value = false;
+    });
 }
 </script>
 

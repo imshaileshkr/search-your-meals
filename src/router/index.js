@@ -25,11 +25,11 @@ const routes = [
         name: "byName",
         component: SearchByName,
       },
-      {
-        path: "/by-ingredients/:ingredients?",
-        name: "byIngredients",
-        component: SearchByIngredients,
-      },
+      // {
+      //   path: "/by-ingredients/:ingredients?",
+      //   name: "byIngredients",
+      //   component: SearchByIngredients,
+      // },
       {
         path: "/meal/:id?",
         name: "mealsDetails",

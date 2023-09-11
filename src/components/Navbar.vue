@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white h-16 shadow flex justify-between items-stretch">
     <router-link
-      :to="{ name: 'home' }"
+      :to="{ name: 'byName' }"
       class="inline-flex items-center h-full px-5"
       >HOME</router-link
     >
@@ -17,11 +17,11 @@
         class="px-4 transition-colors hover:bg-purple-100 inline-flex items-center h-full"
         >Meals By Latter</router-link
       >
-      <router-link
+      <!-- <router-link
         :to="{ name: 'byIngredients', params: {} }"
         class="px-4 transition-colors hover:bg-purple-100 inline-flex items-center h-full"
         >Meals By Ingredients</router-link
-      >
+      > -->
     </div>
   </header>
 </template>
